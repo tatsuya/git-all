@@ -1,7 +1,6 @@
 # git-all
 
-**git-all** runs [git command](https://git-scm.com/docs) under multiple git repositories concurrently.
-
+**git-all** is a command line utility to run [git command](https://git-scm.com/docs) under multiple git repositories concurrently.
 
 ## Installation
 
@@ -13,9 +12,9 @@ $ npm install -g git-all
 
 ## Usage
 
-**git-all** basically takes any [git commands](https://git-scm.com/docs) as the first argument and run that given command under the sub directories in which the `.git` directory is existed.
+**git-all** command takes any [git command](https://git-scm.com/docs) as its first argument and runs that command under the sub directories of current directory where the `.git` directory is existed in.
 
-Assume you have the following files and directories:
+Let's say you have the following files and directories:
 
 ```
 ~/Projects/
@@ -34,7 +33,7 @@ $ cd ~/Projects
 $ git-all status
 ```
 
-The command first tries to find the child git repositories under `~/Projects` (in the above case `cool-examples` and `super-express`), and then execute `git status` command under each of them in parallel.
+The command first tries to find the all git projects under `~/Projects` (in the above case `cool-examples` and `super-express` are the target), and executes `git status` command under that directories.
 
 Is it boring? You can do whatever you want:
 
@@ -52,18 +51,16 @@ $ git-all status ~/Projects
 
 ## Note
 
-Currently, if your command get prompt (for example, requires username and password), this tool does not work properly. One way to workaround this is to cache your credentials using Git's credential cache.
+Currently, if your command get prompt (for example, requires username and password), this tool doesn't work properly. As a workaround you can cache your credentials using Git's credential cache.
 
 - [Caching your GitHub password in Git - User Documentation](https://help.github.com/articles/caching-your-github-password-in-git/)
 - [Git - git-credential-cache Documentation](https://git-scm.com/docs/git-credential-cache)
 
-The following command caches your credentials locally for 1 hour.
+The following command caches your credentials locally for an hour.
 
 ```
 $ git config --global credential.helper 'cache --timeout=3600'
 ```
-
-Some other ways are also available. Take a look at [this](http://stackoverflow.com/questions/6565357/git-push-requires-username-and-password) if you are interested.
 
 ## Test
 
