@@ -39,8 +39,8 @@ Is it boring? You can do whatever you want:
 
 ```
 $ git-all fetch
-$ git-all checkout master
-$ git-all reset HEAD --hard
+$ git-all "reset HEAD --hard"
+$ git-all "config user.email tatsuyaoiw@gmail.com"
 ```
 
 You can also specify the path where the command is ran as the second argument.
