@@ -62,12 +62,30 @@ The following command caches your credentials locally for an hour.
 $ git config --global credential.helper 'cache --timeout=3600'
 ```
 
-## Test
+## Development
+
+### Running test
 
 Run:
 
 ```
 $ npm test
+```
+
+### Releasing
+
+[npm-version](https://docs.npmjs.com/cli/version) command will bump the version and write the new data back to `package.json`. It will also create a version commit and tag.
+
+```
+$ npm version <newversion>
+```
+
+The **newversion** argument should be semver string, usually either one of **patch**, **minor** or **major**.
+
+Example:
+
+```
+$ npm version patch
 ```
 
 ## Licence
