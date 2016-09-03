@@ -12,9 +12,11 @@ if (argv.length < 1) {
 }
 
 var command = argv.shift();
-var parent = argv.shift() || '.';
+var parent = path.resolve(process.cwd(), argv.shift() || '.');
 
-git(command, path.resolve(process.cwd(), parent), function(err) {
+console.log('Running git-all on ' + parent);
+
+git(command, parent, function(err) {
   if (err) {
     console.log(err.message);
     process.exit(1);
