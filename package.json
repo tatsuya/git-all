@@ -1,6 +1,6 @@
 {
   "name": "git-all",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run git command under multiple git repositories concurrently.",
   "bin": {
     "git-all": "cli.js"
